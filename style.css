@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.gamecontainer {
+    background-image: url(images/bg1.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actualgame {
+    width: 50%;
+    height: 90%;
+    /* min-height: max-content; */
+    background-color: rgb(223, 43, 23);
+    border-radius: 16px;
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.actualgame button {
+    width: 100px;
+    height: 50px;
+    border-radius: 16px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: bolder;
+    cursor: pointer;
+    animation: bigSmall 2s infinite;
+}
+
+@keyframes bigSmall {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.actualgame button:hover {
+    animation: none; 
+}
+
+#level_selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#level_selection button {
+    animation: bigSmall 2s infinite;
+    margin-top: 10px;
+}
+
+#row_column_selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#row_column_selection label,
+#row_column_selection select,
+#row_column_selection button {
+    margin-top: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    max-width: 100%;
+}
+
+.grid-item {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 14px; /* Adjust font size to fit smaller screens */
+    font-weight: bold;
+}
+
+
+.select_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#timers {
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+    .actualgame {
+        width: 80%;
+    }
+
+    .actualgame button {
+        width: 80px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .grid-item {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .actualgame {
+        width: 90%;
+    }
+
+    .actualgame button {
+        width: 70px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .grid-item {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+
