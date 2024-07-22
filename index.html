@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindStrom</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <div class="gamecontainer">
+        <div class="actualgame">
+            <!-- Music message -->
+            <div id="music_message" class="button">
+                <p>Click anywhere to enable music</p>
+            </div>
+
+            <!-- game starting button -->
+            <div id="start_button" class="button">
+                <button onclick="showLevels()">Start</button>
+            </div>
+
+            <!-- music button  -->
+            <div id="music_button" class="button">
+                <button id="music" onclick="toggleMusic()">Unmute Music</button>
+            </div>
+
+            <!-- selecting levels -->
+            <div id="level_selection" class="button" style="display: none;">
+                <button onclick="selectLevel('easy')">Easy</button>
+                <button onclick="selectLevel('medium')">Medium</button>
+                <button onclick="selectLevel('hard')">Hard</button>
+            </div>
+            <button id="previous_button" style="display: none;" onclick="goToPreviousStep()">Previous</button>
+
+            <!-- selecting rows and column -->
+            <div id="row_column_selection" class="button" style="display: none;">
+                <label for="rowsSelect">Rows:</label>
+                <select id="rowsSelect"></select>
+                <label for="colsSelect">Columns:</label>
+                <select id="colsSelect"></select>
+                <button onclick="showStartGameButton()">Next</button>
+            </div>
+
+            <!-- start button to generate table -->
+            <div id="start_game_container" class="button" style="display: none;">
+                <button id="startGameButton" onclick="startGame()">Start Game</button>
+            </div>
+
+            <!-- timers -->
+            <div id="timers" style="display: none;">
+                <p>Memorization Time: <span id="memorizeTime">00:00</span></p>
+                <p>Answer Time: <span id="answerTime">00:00</span></p>
+            </div>
+
+            <!-- actual table -->
+            <div id="gameGrid" class="grid-container" style="display: none;"></div>
+            <div id="inputGrid" class="grid-container" style="display: none;"></div>
+            <button id="submitAnswerButton" style="display: none;" onclick="checkAnswer()">Submit Answer</button>
+        </div>
+    </div>
+    <audio id="backgroundMusic" src="bg_music/neon-gaming-128925.mp3" loop muted></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
