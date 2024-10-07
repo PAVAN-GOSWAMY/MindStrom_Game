@@ -220,9 +220,7 @@ function randomColor() {
 // Function to get a random value for the grid
 function getRandomValue() {
     const values = [
-        '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-',
-        'cat', 'dog', 'sun', 'on', 'sky', 'car', 'bus', 'box', 'hat', 'pen'
+        '0', '1',
     ];
     return values[Math.floor(Math.random() * values.length)];
 }
